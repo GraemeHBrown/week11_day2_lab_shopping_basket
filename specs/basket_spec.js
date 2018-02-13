@@ -14,7 +14,15 @@ describe('Basket', function(){
   })
 
   it('should add item to basket', function(){
-    basket.addItem ('item1')
+    basket.addItem ('item1');
+    const actual = basket.countItems();
+    assert.strictEqual(actual, 1);
+  })
+
+  it('should remove item from basket', function(){
+    basket.addItem ('item1');
+    basket.addItem ('item2');
+    basket.removeItem ('item1');
     const actual = basket.countItems();
     assert.strictEqual(actual, 1);
   })
